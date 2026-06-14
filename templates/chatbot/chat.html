@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}Assistente virtual{% endblock %}
+
+{% block conteudo %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <h1 class="mb-3">Assistente virtual</h1>
+        <p class="text-muted">Tire dúvidas sobre serviços, preços, horários e agendamentos.</p>
+
+        {% csrf_token %}
+
+        <div id="conversa" class="border rounded p-3 mb-3" style="height: 350px; overflow-y: auto; background:#f8f9fa;">
+            <div class="mensagem-bot">
+                <strong>Assistente:</strong> Olá! Como posso ajudar você hoje?
+            </div>
+        </div>
+
+        <div class="input-group">
+            <input type="text" id="campo-mensagem" class="form-control" placeholder="Digite sua mensagem...">
+            <button id="botao-enviar" class="btn btn-success">Enviar</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/chat.js' %}"></script>
+{% endblock %}

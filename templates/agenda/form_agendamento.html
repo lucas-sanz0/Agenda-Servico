@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}{{ titulo }}{% endblock %}
+
+{% block conteudo %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <h1 class="mb-4">{{ titulo }}</h1>
+
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label class="form-label" for="id_servico">Serviço</label>
+                {{ form.servico }}
+                {% if form.servico.errors %}<div class="text-danger small">{{ form.servico.errors|striptags }}</div>{% endif %}
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="form-label" for="id_data">Data</label>
+                    {{ form.data }}
+                    {% if form.data.errors %}<div class="text-danger small">{{ form.data.errors|striptags }}</div>{% endif %}
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label" for="id_hora">Hora</label>
+                    {{ form.hora }}
+                    {% if form.hora.errors %}<div class="text-danger small">{{ form.hora.errors|striptags }}</div>{% endif %}
+                </div>
+            </div>
+
+            <hr>
+            <h5>Endereço do atendimento</h5>
+            <p class="text-muted small">Digite o CEP que o restante do endereço é preenchido automaticamente.</p>
+
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label class="form-label" for="id_cep">CEP</label>
+                    {{ form.cep }}
+                </div>
+                <div class="col-md-8 mb-3">
+                    <label class="form-label" for="id_logradouro">Logradouro</label>
+                    {{ form.logradouro }}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 mb-3">
+                    <label class="form-label" for="id_numero">Número</label>
+                    {{ form.numero }}
+                </div>
+                <div class="col-md-5 mb-3">
+                    <label class="form-label" for="id_complemento">Complemento</label>
+                    {{ form.complemento }}
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label class="form-label" for="id_bairro">Bairro</label>
+                    {{ form.bairro }}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-9 mb-3">
+                    <label class="form-label" for="id_cidade">Cidade</label>
+                    {{ form.cidade }}
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label class="form-label" for="id_uf">UF</label>
+                    {{ form.uf }}
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="id_observacoes">Observações</label>
+                {{ form.observacoes }}
+            </div>
+
+            <button type="submit" class="btn btn-success">Salvar</button>
+            <a href="{% url 'lista_agendamentos' %}" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/cep.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,27 @@
+body {
+    background-color: #ffffff;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.card {
+    border: 1px solid #e0e0e0;
+}
+
+/* Mensagens do chatbot */
+.mensagem-bot {
+    background-color: #e9f5ec;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+}
+
+.mensagem-usuario {
+    background-color: #d7e3fc;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    text-align: right;
+}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Entrar - AgendaServiço{% endblock %}
+
+{% block conteudo %}
+<div class="row justify-content-center">
+    <div class="col-md-5">
+        <h1 class="mb-4">Entrar</h1>
+
+        {% if form.errors %}
+            <div class="alert alert-danger">Usuário ou senha inválidos. Tente novamente.</div>
+        {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label class="form-label" for="id_username">Usuário</label>
+                <input type="text" name="username" id="id_username" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="id_password">Senha</label>
+                <input type="password" name="password" id="id_password" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-success">Entrar</button>
+            <a href="{% url 'cadastro' %}" class="btn btn-link">Não tenho conta</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

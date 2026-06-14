@@ -1,0 +1,4 @@
+Django>=5.2,<6.0
+requests>=2.31
+python-decouple>=3.8
+selenium>=4.15

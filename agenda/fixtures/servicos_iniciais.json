@@ -1,0 +1,32 @@
+[
+  {
+    "model": "agenda.servico",
+    "pk": 1,
+    "fields": {
+      "nome": "Faxina residencial",
+      "descricao": "Limpeza completa de casas e apartamentos.",
+      "preco": "150.00",
+      "ativo": true
+    }
+  },
+  {
+    "model": "agenda.servico",
+    "pk": 2,
+    "fields": {
+      "nome": "Jardinagem",
+      "descricao": "Poda, capina e manutenção de jardins e quintais.",
+      "preco": "120.00",
+      "ativo": true
+    }
+  },
+  {
+    "model": "agenda.servico",
+    "pk": 3,
+    "fields": {
+      "nome": "Pequenos reparos",
+      "descricao": "Reparos elétricos e hidráulicos simples e montagem de móveis.",
+      "preco": "100.00",
+      "ativo": true
+    }
+  }
+]

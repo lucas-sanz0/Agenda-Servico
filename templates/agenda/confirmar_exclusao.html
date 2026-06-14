@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Confirmar exclusão{% endblock %}
+
+{% block conteudo %}
+<h1 class="mb-4">Confirmar exclusão</h1>
+
+<div class="alert alert-warning">
+    Tem certeza que deseja excluir o agendamento de
+    <strong>{{ agendamento.servico.nome }}</strong> no dia {{ agendamento.data }} às {{ agendamento.hora }}?
+</div>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Sim, excluir</button>
+    <a href="{% url 'lista_agendamentos' %}" class="btn btn-secondary">Não, voltar</a>
+</form>
+{% endblock %}
